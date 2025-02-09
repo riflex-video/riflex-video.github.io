@@ -71,7 +71,7 @@ body {
 }
 
 .publication-authors a {
-   color: hsl(204, 86%, 53%) !important;
+   color: hsl(0, 0%, 0%) !important;
 }
 
 .publication-authors a:hover {
@@ -88,7 +88,20 @@ body {
 .publication-authors {
   /*color: #4286f4;*/
 }
-
+a{
+  color: #000000;
+  position: relative;
+}
+a:after{
+  content: '';
+  position: absolute;
+  top: 60%;
+  left: -0.1em;
+  right: -0.1em;
+  bottom: 0;
+  transition:top 200ms cubic-bezier(0, 0.8, 0.13, 1);
+  background-color: rgba(255,211,30, 0.4);
+}
 .publication-video {
     position: relative;
     width: 100%;
@@ -237,8 +250,8 @@ body {
 }
 
 #toc a {
-  text-decoration: none; /* Remove underline */
-  color: #007bff; /* Set link color */
+  text-decoration: underline; /* Remove underline */
+  color: #000000; /* Set link color */
   font-size: 13px; /* Font size for link text */
 }
 
