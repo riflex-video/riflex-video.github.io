@@ -253,7 +253,7 @@
             including dynamic degree, aesthetic quality, imaging quality, object class, multiple objects, and human
             action.
             Additionally, based on our human evaluation, our fast model surpasses competing approaches—such as
-            CogVideoX, PyramidFlow, MovieGen, and our bidirectional teacher—all of which are significantly slower by
+            CogVideoX, PyramidFlow, MovieGen, and our bidirectional teacher—all of which are significantly Slower Motion by
             several orders of magnitude.
           </p>
           <div class="columns is-centered">
@@ -788,12 +788,12 @@
       <hr>
 
       <div class="container " id="text2long">
-        <h4 id="obj-comparison" class="title is-4 has-text-centered">Spatial and Joint Temporal-spatial Extrapolation</h4>
+        <h4 id="obj-comparison" class="title is-4 has-text-centered">Spatial and Joint Temporal-spatial Extrapolation
+        </h4>
         <!--****************************************************介绍*******************************************************-->
         <div class="content has-text-justified" style="font-size: 1.5rem; line-height: 1.8;">
           <p style="color:black;">
-            RIFLEx can be extended for spatial resolution extrapolation, as well as for both video duration and spatial resolution extrapolation. Compared to direct position extrapolation, we achieve superior visual quality by effectively addressing repetition issues.
-          </p>
+            RIFLEx can be extended for spatial resolution extrapolation, as well as for both video duration and resolution. Compared to position extrapolation (PE), we achieve superior visual quality by effectively <span style=" font-weight: bold">addressing repetition issues</span>. Notably, while PE struggles with joint temporal-spatial extrapolation, our RIFLEx still delivers high-quality results.</p>
         </div>
       </div>
 
@@ -979,14 +979,17 @@ style="display: flex; justify-content: space-between; align-items: flex-start; g
         <!-- ****************************************************************介绍****************************************************************************** -->
         <div class="content has-text-justified" style="font-size: 1.5rem; line-height: 1.8;">
           <p style="color:black;">
-            We compare existing length extrapolation methods in LLMs and image diffusion transformers, which often cause temporal repetition or motion deceleration. In contrast, our method generates new, temporally coherent content that evolves smoothly, achieving superior performance. Below, we highlight the repeated frames with a red box, which correspond to the beginning of the video.
+            We compare popular length extrapolation methods in LLMs and image diffusion transformers, which often introduce <span style="font-weight: bold">temporal repetition or motion deceleration</span>. In contrast, our approach generates new, temporally coherent content that evolves smoothly, delivering superior performance. Below, <span style="font-weight: bold">we highlight repeated frames with a red box</span>, which are identical to the initial frames of the video. 
+        
+            
           </p>
         </div>
       </div>
 
       <br>
 
-
+      
+      
       <div class="columns is-centered has-text-centered">
         <div class="column">
           <p style="color:black;font-size: 20px;">&nbsp;PE&nbsp;</p>
@@ -1006,45 +1009,45 @@ style="display: flex; justify-content: space-between; align-items: flex-start; g
       </div>
 
       <div id="results-carousel"
-        style="display: flex; justify-content: space-between; align-items: flex-start; gap: 5px;">
+        style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0px;">
         <div class="item" style="flex: 1; display: flex; flex-direction: column">
           <video controls preload="metadata" autoplay muted loop playsinline>
             <source
-              src="videos/comparison/PE.mp4"
+              src="videos/comparison/PEnew.mp4"
               type="video/mp4">
           </video>
         </div>
         <div class="item" style="flex: 1; display: flex; flex-direction: column">
           <video controls preload="metadata" autoplay muted loop playsinline>
             <source
-              src="videos/comparison/PI.mp4"
+              src="videos/comparison/PInew.mp4"
               type="video/mp4">
           </video>
         </div>
         <div class="item" style="flex: 1; display: flex; flex-direction: column">
           <video controls preload="metadata" autoplay muted loop playsinline>
             <source
-              src="videos/comparison/TA.mp4"
+              src="videos/comparison/TAnew.mp4"
               type="video/mp4">
           </video>
         </div>
         <div class="item" style="flex: 1; display: flex; flex-direction: column">
           <video controls preload="metadata" autoplay muted loop playsinline>
             <source
-              src="videos/comparison/YaRN.mp4"
+              src="videos/comparison/YaRNnew.mp4"
               type="video/mp4">
           </video>
         </div>
         <div class="item" style="flex: 1; display: flex; flex-direction: column">
           <video controls preload="metadata" autoplay muted loop playsinline>
             <source
-              src="videos/comparison/ours.mp4"
+              src="videos/comparison/oursnew.mp4"
               type="video/mp4">
           </video>
         </div>
       </div>
 
-
+<!-- 
       <br>
 
 
@@ -1085,20 +1088,20 @@ style="display: flex; justify-content: space-between; align-items: flex-start; g
               type="video/mp4">
           </video>
         </div>
-      </div>
-
+      </div> -->
+     
       <div class="columns is-centered has-text-centered">
         <div class="column">
           <p style="color:black;font-size: 20px;">Repetition</p>
         </div>
         <div class="column">
-          <p style="color:black;font-size: 20px;">Slower</p>
+          <p style="color:black;font-size: 20px;">Slower Motion</p>
         </div>
         <div class="column">
-          <p style="color:black;font-size: 20px;">Slower</p>
+          <p style="color:black;font-size: 20px;">Slower Motion</p>
         </div>
         <div class="column">
-          <p style="color:black;font-size: 20px;">Slower</p>
+          <p style="color:black;font-size: 20px;">Slower Motion</p>
         </div>
         <div class="column">
           <p style="color:black;font-size: 20px; font-weight: bold"></p>
@@ -1106,22 +1109,30 @@ style="display: flex; justify-content: space-between; align-items: flex-start; g
       </div>
 
 
-
-
+      <br>
+      <div class="container " id="text2shortcomparison">
+        <div class="content has-text-justified" style="font-size: 1.5rem; line-height: 1.8;">
+           <p style="color:black;">
+             While the NTK in HunyuanVideo coincidentally avoids repetition at 2× extrapolation, this stems from an unintended effect that happens to satisfy the non-repetition condition rather than its intended mechanism. However, at longer extrapolations (e.g., 2.3×), significant repetition still occurs.
+ 
+           </p>
+         </div>
+       </div>
+       <br>
       <div id="results-carousel" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 5px; position: relative;">
         <div class="item" style="flex: 1; display: flex; flex-direction: column; position: relative;">
           <div class="has-text-centered">
             <img src="images/logo/ntk.png" alt="Logo" style="max-height: auto;">
           </div>
         </div>
-        <div class="item" style="flex: 1; display: flex; flex-direction: column;">
+        <div class="item" style="flex: 3; display: flex; flex-direction: column;">
           <video controls preload="metadata" autoplay muted loop playsinline>
             <source
-              src="videos/comparison/NTK/NTK1.mp4"
+              src="videos/comparison/NTK/NTK.mp4"
               type="video/mp4">
           </video>
         </div>
-        <div class="item" style="flex: 1; display: flex; flex-direction: column">
+        <!-- <div class="item" style="flex: 1; display: flex; flex-direction: column">
           <video controls preload="metadata" autoplay muted loop playsinline>
             <source
               src="videos/comparison/NTK/NTK2.mp4"
@@ -1134,7 +1145,7 @@ style="display: flex; justify-content: space-between; align-items: flex-start; g
               src="videos/comparison/NTK/NTK3.mp4"
               type="video/mp4">
           </video>
-        </div>
+        </div> -->
         <div class="item" style="flex: 1; display: flex; flex-direction: column; position: relative;">
           <div class="has-text-centered">
             <img src="images/logo/repetition.png" alt="Logo" style="max-height: auto;">
@@ -1144,34 +1155,19 @@ style="display: flex; justify-content: space-between; align-items: flex-start; g
 
 
       <div id="results-carousel"
-      style="display: flex; justify-content: space-between; align-items: flex-start; gap: 5px;">
-      <div class="item" style="flex: 1; display: flex; flex-direction: column; position: relative;">
+      style="display: flex; justify-content: space-between; align-items: stretch; gap: 5px;"><!-- 修改align-items为stretch -->
+      <div class="item" style="flex: 1; display: flex; flex-direction: column; position: relative;"><!-- flex设为1 -->
         <div class="has-text-centered">
           <img src="images/logo/ours.png" alt="Logo" style="max-height: auto;">
         </div>
       </div>
-      <div class="item" style="flex: 1; display: flex; flex-direction: column">
-        <video controls preload="metadata" autoplay muted loop playsinline>
-          <source
-            src="videos/comparison/NTK/ours1.mp4"
-            type="video/mp4">
+      <div class="item" style="flex: 3; display: flex; flex-direction: column"><!-- flex设为3 -->
+        <video controls preload="metadata" autoplay muted loop playsinline
+               style="height: 100%; object-fit: contain"><!-- 添加高度控制 -->
+          <source src="videos/comparison/NTK/ours.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="item" style="flex: 1; display: flex; flex-direction: column">
-        <video controls preload="metadata" autoplay muted loop playsinline>
-          <source
-            src="videos/comparison/NTK/ours2.mp4"
-            type="video/mp4">
-        </video>
-      </div>
-      <div class="item" style="flex: 1; display: flex; flex-direction: column">
-        <video controls preload="metadata" autoplay muted loop playsinline>
-          <source
-            src="videos/comparison/NTK/ours3.mp4"
-            type="video/mp4">
-        </video>
-      </div>
-      <div class="item" style="flex: 1; display: flex; flex-direction: column">
+      <div class="item" style="flex: 1; display: flex; flex-direction: column"><!-- flex设为1 -->
        
       </div>
     </div>
