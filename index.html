@@ -33,7 +33,7 @@
   <script>
     MathJax = {
       tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']] // 定义行内公式的定界符（例如 $...$ 或 \(...\)）
+        inlineMath: [['$', '$'], ['//(', '//)']] // 定义行内公式的定界符（例如 $...$ 或 /(.../)）
       }
     };
   </script>
@@ -144,7 +144,7 @@
       <div class="hero-body" id="demo">
         <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-top: 20px;">
           <iframe
-            src="logo.jpg"
+            src="videos/demos.mp4"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -152,9 +152,7 @@
             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
         </div>
 
-        <h2 class="subtitle has-text-centered" style="font-size: 1.25em;">
-          Instant video generation that plays the moment you hit Generate!
-        </h2>
+      
         <p style="font-size: 1em; margin-top: 10px; text-align: center;">
           (This webpage contains a lot of videos. We suggest using Chrome for the best experience.)
         </p>
@@ -411,7 +409,7 @@
         <div class="item">
           <video id="cereal" controls preload="metadata" autoplay muted loop playsinline>
             <source
-              src="videos\free2\seed42_Animated characters, a rabbit and a mouse, are depicted in a perilous situation, first plummeting th.mp4"
+              src="videos/free2/seed42_Animated characters, a rabbit and a mouse, are depicted in a perilous situation, first plummeting th.mp4"
               type="video/mp4">
           </video>
           <p class="prompt-text">Animated characters, a rabbit and a mouse, are depicted in a perilous situation, first plummeting through a dark, undefined space, and then floating and swimming in a serene underwater environment. The characters are dressed in adventure gear, suggesting a narrative context. The camera closely follows their expressions and movements, capturing the tension and urgency of their situation. The medium and close-up shots emphasize their facial expressions, which convey fear and determination. The visual style is high-quality 3D animation with detailed textures and lighting, creating a cinematic feel.
@@ -486,7 +484,7 @@
         <div class="item">
           <video id="cereal" controls preload="metadata" autoplay muted loop playsinline>
             <source
-              src="videos\free2\seed42_A fawn Pembroke Welsh Corgi walking in Times Square..mp4"
+              src="videos/free2/seed42_A fawn Pembroke Welsh Corgi walking in Times Square..mp4"
               type="video/mp4">
           </video>
           <p class="prompt-text">A fawn Pembroke Welsh Corgi walking in Times Square.
@@ -731,7 +729,7 @@
       <hr>
 
       <div class="container " id="text2long">
-        <h2 id="obj-comparison" class="title is-3 has-text-centered">Spatial and Joint Temporal-spatial Extrapolation</h2>
+        <h4 id="obj-comparison" class="title is-4 has-text-centered">Spatial and Joint Temporal-spatial Extrapolation</h4>
         <!--****************************************************介绍*******************************************************-->
         <div class="content has-text-justified" style="font-size: 1.5rem; line-height: 1.8;">
           <p>
@@ -741,11 +739,175 @@
       </div>
 
       <br>
-      <br>
-      <br>
-
-     
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <p  style="font-size: 20px;">Normal size&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>480$/times$720&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+        </div>
+        <div class="column">
+          <p style="font-size: 20px;">PE&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>480$/times$1440&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+        </div>
+        <div class="column">
+          <p style="font-size: 20px;"><span style=" font-weight: bold">RIFLEx (Ours)&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span><br>480$/times$1440&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+        </div>
+      </div>
       
+      <div id="results-carousel"
+        style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
+        <div class="item" style="flex: 1; display: flex; flex-direction: column">
+          <img src="images/spatial/2Wnormal.png" alt="Comparison Image" style="width: 90%; height: auto;">
+        </div>
+
+        <div class="item" style="flex: 1; display: flex; flex-direction: column">
+          <img src="images/spatial/2Wbase.png" alt="Comparison Image" style="width: 90%; height: auto;">
+        </div>
+
+        <div class="item" style="flex: 1; display: flex; flex-direction: column">
+          <img src="images/spatial/2Wours.png" alt="Comparison Image" style="width: 90%; height: auto;">
+        </div>
+      
+      </div>
+
+      <br>
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <p  style="font-size: 20px;">Normal size&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>480$/times$720&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+        </div>
+        <div class="column">
+          <p style="font-size: 20px;">PE&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>960$/times$720&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+        </div>
+        <div class="column">
+          <p style="font-size: 20px;"><span style=" font-weight: bold">RIFLEx (Ours)&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span><br>960$/times$720&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+        </div>
+      </div>
+
+      <div id="results-carousel"
+        style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
+        <div class="item" style="flex: 1; display: flex; flex-direction: column">
+          <img src="images/spatial/2Hnormal.png" alt="Comparison Image" style="width: 90%; height: auto;">
+        </div>
+
+        <div class="item" style="flex: 1; display: flex; flex-direction: column">
+          <img src="images/spatial/2Hbase.png" alt="Comparison Image" style="width: 90%; height: auto;">
+        </div>
+
+        <div class="item" style="flex: 1; display: flex; flex-direction: column">
+          <img src="images/spatial/2Hours.png" alt="Comparison Image" style="width: 90%; height: auto;">
+        </div>
+      
+      </div>
+
+      <br>
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <p  style="font-size: 20px;">Normal size&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>480$/times$720&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+        </div>
+        <div class="column">
+          <p style="font-size: 20px;">PE&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>960$/times$140&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+        </div>
+        <div class="column">
+          <p style="font-size: 20px;"><span style=" font-weight: bold">RIFLEx (Ours)&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span><br>960$/times$140&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+        </div>
+      </div>
+
+      
+
+      <div id="results-carousel"
+        style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
+        <div class="item" style="flex: 1; display: flex; flex-direction: column">
+          <img src="images/spatial/2HWnormal1.png" alt="Comparison Image" style="width: 90%; height: auto;">
+        </div>
+
+        <div class="item" style="flex: 1; display: flex; flex-direction: column">
+          <img src="images/spatial/2HWbase1.png" alt="Comparison Image" style="width: 90%; height: auto;">
+        </div>
+
+        <div class="item" style="flex: 1; display: flex; flex-direction: column">
+          <img src="images/spatial/2HWours1.png" alt="Comparison Image" style="width: 90%; height: auto;">
+        </div>
+      
+      </div>
+
+      <div id="results-carousel"
+      style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
+      <div class="item" style="flex: 1; display: flex; flex-direction: column">
+        <img src="images/spatial/2HWnormal2.png" alt="Comparison Image" style="width: 90%; height: auto;">
+      </div>
+
+      <div class="item" style="flex: 1; display: flex; flex-direction: column">
+        <img src="images/spatial/2HWbase2.png" alt="Comparison Image" style="width: 90%; height: auto;">
+      </div>
+
+      <div class="item" style="flex: 1; display: flex; flex-direction: column">
+        <img src="images/spatial/2HWours2.png" alt="Comparison Image" style="width: 90%; height: auto;">
+      </div>
+    
+    </div>
+
+    <br>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <p  style="font-size: 20px;">Normal size&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>480$/times$720$/times$49&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+      </div>
+      <div class="column">
+        <p style="font-size: 20px;">PE&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>960$/times$140$/times$97&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+      </div>
+      <div class="column">
+        <p style="font-size: 20px;"><span style=" font-weight: bold">RIFLEx (Ours)&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span><br>960$/times$140$/times$97&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+      </div>
+    </div>
+
+
+    <div id="results-carousel"
+    style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
+ <div class="item" style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+   <video controls preload="metadata" autoplay muted loop playsinline
+          style="width: 45%; height: 45%; margin:auto;">
+     <source src="images/spatial/demo1_normal.mp4" type="video/mp4">
+   </video>
+ </div>
+ <div class="item" style="flex: 1; display: flex; flex-direction: column">
+   <video controls preload="metadata" autoplay muted loop playsinline
+          style="width: 90%; height: 90%; margin:auto;">
+     <source src="images/spatial/demo1_baseline.mp4" type="video/mp4">
+   </video>
+ </div>
+ <div class="item" style="flex: 1; display: flex; flex-direction: column">
+  <video controls preload="metadata" autoplay muted loop playsinline
+        style="width: 90%; height: 90%; margin:auto;">
+     <source src="images/spatial/demo1_ours.mp4" type="video/mp4">
+   </video>
+ </div>
+</div>
+
+
+
+
+
+<div id="results-carousel"
+style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
+<div class="item" style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+<video controls preload="metadata" autoplay muted loop playsinline
+      style="width: 45%; height: 45%; margin:auto;">
+ <source src="images/spatial/demo2_normal.mp4" type="video/mp4">
+</video>
+</div>
+<div class="item" style="flex: 1; display: flex; flex-direction: column">
+<video controls preload="metadata" autoplay muted loop playsinline
+      style="width: 90%; height: 90%; margin:auto;">
+ <source src="images/spatial/demo2_baseline.mp4" type="video/mp4">
+</video>
+</div>
+<div class="item" style="flex: 1; display: flex; flex-direction: column">
+<video controls preload="metadata" autoplay muted loop playsinline
+    style="width: 90%; height: 90%; margin:auto;">
+ <source src="images/spatial/demo2_ours.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+
+
+
       </div>
 <!-- ********************************************************************* 方法对比之一 ************************************************************************* -->
       <br>
@@ -754,7 +916,7 @@
 
       <hr>
       <div class="container " id="text2shortcomparison">
-        <h2 id="obj-comparison" class="title is-3 has-text-centered">Temporal Extrapolation Comparsions</h2>
+        <h4 id="obj-comparison" class="title is-4 has-text-centered">Temporal Extrapolation Comparsions</h4>
         <!-- ****************************************************************介绍****************************************************************************** -->
         <div class="content has-text-justified" style="font-size: 1.5rem; line-height: 1.8;">
           <p>
@@ -789,35 +951,35 @@
         <div class="item" style="flex: 1; display: flex; flex-direction: column">
           <video controls preload="metadata" autoplay muted loop playsinline>
             <source
-              src="videos\comparison\PE.mp4"
+              src="videos/comparison/PE.mp4"
               type="video/mp4">
           </video>
         </div>
         <div class="item" style="flex: 1; display: flex; flex-direction: column">
           <video controls preload="metadata" autoplay muted loop playsinline>
             <source
-              src="videos\comparison\PI.mp4"
+              src="videos/comparison/PI.mp4"
               type="video/mp4">
           </video>
         </div>
         <div class="item" style="flex: 1; display: flex; flex-direction: column">
           <video controls preload="metadata" autoplay muted loop playsinline>
             <source
-              src="videos\comparison\TA.mp4"
+              src="videos/comparison/TA.mp4"
               type="video/mp4">
           </video>
         </div>
         <div class="item" style="flex: 1; display: flex; flex-direction: column">
           <video controls preload="metadata" autoplay muted loop playsinline>
             <source
-              src="videos\comparison\YaRN.mp4"
+              src="videos/comparison/YaRN.mp4"
               type="video/mp4">
           </video>
         </div>
         <div class="item" style="flex: 1; display: flex; flex-direction: column">
           <video controls preload="metadata" autoplay muted loop playsinline>
             <source
-              src="videos\comparison\ours.mp4"
+              src="videos/comparison/ours.mp4"
               type="video/mp4">
           </video>
         </div>
@@ -832,35 +994,35 @@
         <div class="item" style="flex: 1; display: flex; flex-direction: column">
           <video controls preload="metadata" autoplay muted loop playsinline>
             <source
-              src="videos\comparison\PE2.mp4"
+              src="videos/comparison/PE2.mp4"
               type="video/mp4">
           </video>
         </div>
         <div class="item" style="flex: 1; display: flex; flex-direction: column">
           <video controls preload="metadata" autoplay muted loop playsinline>
             <source
-              src="videos\comparison\PI2.mp4"
+              src="videos/comparison/PI2.mp4"
               type="video/mp4">
           </video>
         </div>
         <div class="item" style="flex: 1; display: flex; flex-direction: column">
           <video controls preload="metadata" autoplay muted loop playsinline>
             <source
-              src="videos\comparison\TA2.mp4"
+              src="videos/comparison/TA2.mp4"
               type="video/mp4">
           </video>
         </div>
         <div class="item" style="flex: 1; display: flex; flex-direction: column">
           <video controls preload="metadata" autoplay muted loop playsinline>
             <source
-              src="videos\comparison\YaRN2.mp4"
+              src="videos/comparison/YaRN2.mp4"
               type="video/mp4">
           </video>
         </div>
         <div class="item" style="flex: 1; display: flex; flex-direction: column">
           <video controls preload="metadata" autoplay muted loop playsinline>
             <source
-              src="videos\comparison\ours2.mp4"
+              src="videos/comparison/ours2.mp4"
               type="video/mp4">
           </video>
         </div>
@@ -916,7 +1078,7 @@
         <div class="item" style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
           <video id="cereal" controls preload="metadata" autoplay muted loop playsinline>
             <source
-              src="videos\comparison\NTK\NTK1.mp4"
+              src="videos/comparison/NTK/NTK1.mp4"
               type="video/mp4">
           </video>
         </div>
@@ -924,7 +1086,7 @@
         <div class="item" style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
           <video id="cereal" controls preload="metadata" autoplay muted loop playsinline>
             <source
-              src="videos\comparison\NTK\ours1.mp4"
+              src="videos/comparison/NTK/ours1.mp4"
               type="video/mp4">
           </video>
         </div>
@@ -937,7 +1099,7 @@
         <div class="item" style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
           <video id="cereal" controls preload="metadata" autoplay muted loop playsinline>
             <source
-              src="videos\comparison\NTK\NTK2.mp4"
+              src="videos/comparison/NTK/NTK2.mp4"
               type="video/mp4">
           </video>
         </div>
@@ -945,7 +1107,7 @@
         <div class="item" style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
           <video id="cereal" controls preload="metadata" autoplay muted loop playsinline>
             <source
-              src="videos\comparison\NTK\ours2.mp4"
+              src="videos/comparison/NTK/ours2.mp4"
               type="video/mp4">
           </video>
         </div>
