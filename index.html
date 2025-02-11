@@ -188,24 +188,36 @@
 
   <section class="hero is-small">
     <div class="hero-body ">
-      <!-- <hr>
+      <hr>
       <div class="container " id="abstract">
-        <h2 id="obj-comparison" class="title is-3 has-text-centered">Abstract</h2>
-        <figure class="image is-centered">
-          <img src="images/teaser.png">
+        <h2 id="obj-comparison" class="title is-4 has-text-centered">Overview</h2>
+        <figure class="image is-centered" style="display: flex; justify-content: center; align-items: center;">
+          <img src="images/overview.png" style="width: 70%; height: auto;">
         </figure>
+        
         <div class="content has-text-justified" style="font-size: 1.5rem; line-height: 1.8;">
           <p style="color:black;">
-            Current video diffusion models achieve impressive generation quality but struggle in interactive applications due to bidirectional attention dependencies.
-            The generation of a single frame requires the model to process the entire sequence, including the future.
-            We address this limitation by adapting a pretrained bidirectional diffusion transformer to an autoregressive transformer that generates frames on-the-fly.
-            To further reduce latency, we extend distribution matching distillation (DMD) to videos, distilling 50-step diffusion model into a 4-step generator.
-            To enable stable and high-quality distillation, we introduce a student initialization scheme based on teacher's ODE trajectories, as well as an asymmetric distillation strategy that supervises a causal student model with a bidirectional teacher.
-            This approach effectively mitigates error accumulation in autoregressive generation, allowing long-duration video synthesis despite training on short clips.
-            Our model achieves a total score of 84.27 on the VBench-Long benchmark, surpassing all previous video generation models.    
-            It enables fast streaming generation of high-quality videos at 9.4 FPS on a single GPU thanks to KV caching. Our approach also enables streaming video-to-video translation, image-to-video, and dynamic prompting in a zero-shot manner.
-            We will release the code based on an open-source model in the future.
+            <span style="color: rgb(25, 100, 201)">Motivation:</span>Recent advancements in video generation allow models to create high-quality, minute-long videos, 
+            but fixed sequence lengths limit their ability to extend content. 
+            In this paper, we explore length extrapolation techniques that
+            <span style="font-weight: bold">generate new and temporally coherent content without training on longer videos</span>. 
+            Current extrapolation strategies, often exhibit issues such as <span style="font-weight: bold">temporal repetition</span> and <span style="font-weight: bold">slow motion</span>,
+            indicating a gap in understanding how positional encodings affect video extrapolation.
+            <br>
+            <span style="color: rgb(25, 100, 201)">Analysis:</span>
+            We systematically analyze the role of individual frequency components in positional, 
+            discovering that high frequencies capture rapid movements and short-term dependencies,
+             inducing temporal repetition, while low frequencies encode long-term dependencies with slow motion. 
+             Furthermore, we surprisingly identify an <span style="font-weight: bold">intrinsic frequency</span> that primarily dictates repetition 
+             patterns among all components during extrapolation.
+             <br>
+             <span style="color: rgb(25, 100, 201)">Method:</span>
+             Building on these insights, we propose Reducing Intrinsic Frequency for Length Extrapolation (RIFLEx),
+             <span style="font-weight: bold">a minimal yet effective</span> solution that lowers the intrinsic frequency to ensure it remains within a single 
+              cycle after extrapolation, without requiring additional modifications.
+
          </p>
+         
         </div>
 
       </div>
@@ -213,84 +225,8 @@
 
       <br>
       <br>
-      <br>
-
       <hr>
-      <div class="container " id="overview">
-        <h2 id="obj-comparison" class="title is-3 has-text-centered">CausVid Method Overview</h2>
-        <div class="content has-text-justified" style="font-size: 1.5rem; line-height: 1.8;">
-          <figure class="image is-centered">
-            <img src="images/methods.jpg">
-          </figure>
-          <p style="color:black;">
-            Our method distills a many-step, bidirectional video diffusion model <strong>s<sub>data</sub></strong> into
-            a 4-step, causal generator <strong>G<sub>ϕ</sub></strong>.
-            The training process consists of two stages:
-            (1) Student Initialization: We initialize the causal student by pretraining it on a small set of ODE
-            solution pairs generated by the bidirectional teacher.
-            This step helps stabilize the subsequent distillation training.
-            (2) Asymmetric Distillation: Using the <em>bidirectional</em> teacher model, we train the <em>causal</em>
-            student generator through a distribution matching distillation loss.
-          </p>
-        </div>
-      </div>
-
-      <br>
-      <br>
-      <br>
-
-      <hr>
-      <div class="container " id="result">
-        <h2 id="obj-comparison" class="title is-3 has-text-centered">State-of-the-art Text-to-Video Generation Quality
-        </h2>
-        <div class="content has-text-justified" style="font-size: 1.5rem; line-height: 1.8;">
-          <p style="color:black;">
-            Our model achieves a total score of 84.27 on VBench (see
-            <a href="https://huggingface.co/spaces/Vchitect/VBench_Leaderboard">VBench Leaderboard</a>)
-            ranking the first place among all verified submissions and
-            uniquely enabling fast streaming inference on a single GPU at 9.4 FPS.
-            The radar plot visualizes our method's comprehensive performance advantages across several key metrics,
-            including dynamic degree, aesthetic quality, imaging quality, object class, multiple objects, and human
-            action.
-            Additionally, based on our human evaluation, our fast model surpasses competing approaches—such as
-            CogVideoX, PyramidFlow, MovieGen, and our bidirectional teacher—all of which are significantly Slower Motion by
-            several orders of magnitude.
-          </p>
-          <div class="columns is-centered">
-            <figure class="column is-half image">
-              <img src="images/radar.jpg" alt="Radar Plot">
-            </figure>
-            <figure class="column is-half image">
-              <img src="images/preference.jpg" alt="Preference Evaluation">
-            </figure>
-          </div>
-        </div>
-      </div>
-
-      <br>
-      <br>
-      <br>
-
-      <hr>
-      <div class="container " id="ui">
-        <h2 id="obj-comparison" class="title is-3 has-text-centered">Interactive UI</h2>
-        <div class="content has-text-justified" style="font-size: 1.5rem; line-height: 1.8;">
-          <p style="color:black;">
-            We present an interactive user interface (UI) featuring text-to-10s video generation, infinitely long video
-            generation through sliding window inference, and image-to-video generation capabilities.
-          </p>
-          <video id="cereal" controls preload="metadata" autoplay muted loop playsinline>
-            <source src="https://huggingface.co/datasets/tianweiy/causvid_website/resolve/main/videos/ui.mp4"
-              type="video/mp4">
-          </video>
-        </div>
-      </div>
-
-      <br>
-      <br>
-      <br> -->
-
-      <hr>
+ 
       <div class="container " id="text2short">
         <h2 id="obj-comparison" class="title is-4 has-text-centered">Training-free 2× Temporal Extrapolation
         </h2>
@@ -1113,7 +1049,7 @@ style="display: flex; justify-content: space-between; align-items: flex-start; g
       <div class="container " id="text2shortcomparison">
         <div class="content has-text-justified" style="font-size: 1.5rem; line-height: 1.8;">
            <p style="color:black;">
-             While the NTK in HunyuanVideo coincidentally avoids repetition at 2× extrapolation, this stems from an unintended effect that happens to satisfy the non-repetition condition rather than its intended mechanism. However, at longer extrapolations (e.g., 2.3×), significant repetition still occurs.
+             While the NTK in HunyuanVideo coincidentally avoids repetition at 2× extrapolation, this stems from an unintended effect that happens to satisfy the non-repetition condition rather than its intended mechanism. At longer extrapolations (e.g., 2.3×), significant repetition still occurs.
  
            </p>
          </div>
