@@ -197,21 +197,25 @@
         
         <div class="content has-text-justified" style="font-size: 1.5rem; line-height: 1.8;">
           <p style="color:black;">
-            <span style="color: rgb(25, 100, 201)">Motivation:</span>Recent advancements in video generation allow models to create high-quality, minute-long videos, 
-            but fixed sequence lengths limit their ability to extend content. 
-            In this paper, we explore length extrapolation techniques that
-            <span style="font-weight: bold">generate new and temporally coherent content without training on longer videos</span>. 
-            Current extrapolation strategies, often exhibit issues such as <span style="font-weight: bold">temporal repetition</span> and <span style="font-weight: bold">slow motion</span>,
-            indicating a gap in understanding how positional encodings affect video extrapolation.
             <br>
-            <span style="color: rgb(25, 100, 201)">Analysis:</span>
+            <span style="color: rgb(25, 100, 201);font-weight: bold">Motivation:</span>
+            Recent advancements in video generation allow models to create high-quality videos, 
+            but fixed sequence lengths limit their ability to extend content.
+             In this paper, we explore length extrapolation techniques that <span style="font-weight: bold">generate new and temporally coherent content 
+             without longer training videos</span>. Current extrapolation strategies lead to <span style="font-weight: bold">temporal repetition</span> or <span style="font-weight: bold">slow motion</span>,
+              indicating a gap in understanding how positional encodings affect video extrapolation.
+
+            <br>
+            <br>
+            <span style="color: rgb(25, 100, 201);font-weight: bold">Analysis:</span>
             We systematically analyze the role of individual frequency components in positional, 
             discovering that high frequencies capture rapid movements and short-term dependencies,
              inducing temporal repetition, while low frequencies encode long-term dependencies with slow motion. 
              Furthermore, we surprisingly identify an <span style="font-weight: bold">intrinsic frequency</span> that primarily dictates repetition 
              patterns among all components during extrapolation.
              <br>
-             <span style="color: rgb(25, 100, 201)">Method:</span>
+             <br>
+             <span style="color: rgb(25, 100, 201);font-weight: bold">Method:</span>
              Building on these insights, we propose Reducing Intrinsic Frequency for Length Extrapolation (RIFLEx),
              <span style="font-weight: bold">a minimal yet effective</span> solution that lowers the intrinsic frequency to ensure it remains within a single 
               cycle after extrapolation, without requiring additional modifications.
